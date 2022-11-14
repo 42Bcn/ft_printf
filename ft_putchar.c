@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvelasco <cvelasco@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 12:43:14 by cvelasco          #+#    #+#             */
-/*   Updated: 2022/10/17 12:43:17 by cvelasco         ###   ########.fr       */
+/*   Created: 2022/10/20 09:46:18 by cvelasco          #+#    #+#             */
+/*   Updated: 2022/10/20 09:48:05 by cvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-#include <unistd.h>
-
-int ft_putchar(int c);
-
-#endif
+int ft_putchar(int c)
+{
+    if (write (1, &c, 1) != 1)
+        return (-1);
+    return (1);
+}
