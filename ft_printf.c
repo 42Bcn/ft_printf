@@ -28,12 +28,12 @@ int ft_printf(char const *str, ...)
             i++;
             if(str[i] == 'c')
                 aux += ft_putchar(va_arg(args, int));
+            else if (str[i] == 's')
+                aux += ft_putstr(va_arg(args, char*));
+            else if (str[i] == 'u')
         
         /*
-        else if (str[i] == 's')
-        else if (str[i] == 'i')
         else if (str[i] == 'p')
-        else if (str[i] == 'u')
         else if (str[i] == 'x')
         else if (str[i] == 'X')
         else if (str[i] == '&')
