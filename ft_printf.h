@@ -17,5 +17,7 @@
 #include <unistd.h>
 
 int ft_putchar(int c);
+int	ft_putnbr(int n);
+int ft_putstr(char *str);
 
 #endif

@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvelasco <cvelasco@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 09:46:18 by cvelasco          #+#    #+#             */
-/*   Updated: 2022/10/20 09:48:05 by cvelasco         ###   ########.fr       */
+/*   Created: 2023/01/09 15:21:21 by cvelasco          #+#    #+#             */
+/*   Updated: 2023/01/09 15:21:33 by cvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(int c)
+int ft_putstr(char *str)
 {
-    return (write (1, &c, 1));
+    int i;
+
+    i = 0;
+    if (!str)
+        return (write(1, "(null)", 6));
+    while (str[i])
+    {
+        if (ft_putchar(str[i]) == -1)
+            return (-1);
+        i++;
+    }
+    return (i);
 }
