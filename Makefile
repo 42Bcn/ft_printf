@@ -11,15 +11,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = libftprintf.a
 
-SRC = ft_putchar.c ft_putnbr.c ft_putstr.c ft_printf.c
+SRC = ft_putchar.c \
+	  ft_putnbr.c \
+	  ft_putstr.c \
+	  ft_printf.c \
+	  ft_putnbr_hex.c \
+	  ft_putptr.c
 
 OBJ = $(SRC:.c=.o)
 
 DEPS = $(SRC:.c=.d)
-
-HEADER = printf.h
 
 FLAGS = -Wall -Wextra -Werror -MMD
 
@@ -34,10 +37,12 @@ $(NAME) : $(OBJ)
 	ar -crs $(NAME) $(OBJ)
 
 clean :
-	del /f $(OBJ) $(DEPS)
+	rm -f $(OBJ) $(DEPS)
+	#del /f $(OBJ) $(DEPS)
 
 fclean : clean
-	del /f $(NAME)
+	rm -f $(NAME)
+	#del /f $(NAME)
 
 re : fclean all
 

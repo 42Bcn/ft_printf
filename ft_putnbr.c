@@ -6,12 +6,11 @@
 /*   By: cvelasco <cvelasco@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 09:17:17 by cvelasco          #+#    #+#             */
-/*   Updated: 2022/10/20 09:27:12 by cvelasco         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:47:39 by cvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static	int	ft_abs(int n)
 {
@@ -36,9 +35,9 @@ static	int	ft_write_num(int n, int nchar)
 
 int	ft_putnbr(int n)
 {
-    int nchar;
+	int	nchar;
 
-    nchar = 0;
+	nchar = 0;
 	if (n < 0)
 	{
 		if (ft_putchar('-') == -1)
@@ -46,5 +45,6 @@ int	ft_putnbr(int n)
 		nchar++;
 	}
 	nchar = ft_write_num(n, nchar);
-    return (nchar);
+	return (nchar);
 }
+
