@@ -5,41 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvelasco <cvelasco@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 15:46:07 by cvelasco          #+#    #+#             */
-/*   Updated: 2023/01/12 15:46:14 by cvelasco         ###   ########.fr       */
+/*   Created: 2023/01/13 17:08:35 by cvelasco          #+#    #+#             */
+/*   Updated: 2023/01/13 17:33:08 by cvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
-#include <stdio.h>
 
-int ft_putchar(int c)
+int	ft_putptr(unsigned long int n)
 {
-    return (write (1, &c, 1));
-}
+	char	*hex;
+	int		bytes;
+	int		aux;
 
-void ft_putptr(void *ptr)
-{
-    int i;
-    char c;
-
-    i = 0;
-    c = 0;
-    while(i < 11)
-    {
-        write(1, &ptr[i++], 1);
-    }
-    printf("\n punter real; %p", ptr);
-}
-
-int main()
-{
-    int a;
-    int *b;
-    a = 4;
-    b = &a;
-    
-    ft_putptr(&a);
-    return (1);
+	hex = "0123456789abcdef";
+	bytes = 0;
+	aux = 0;
+	if (n > 15)
+	{
+		aux = ft_putptr(n / 16);
+		if (aux == -1)
+			return (-1);
+		bytes += aux;
+	}
+	aux = ft_putchar(hex[n % 16]);
+	if (aux == -1)
+		return (-1);
+	bytes += aux;
+	return (bytes);
 }

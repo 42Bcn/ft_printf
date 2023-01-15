@@ -6,7 +6,7 @@
 /*   By: cvelasco <cvelasco@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 09:46:18 by cvelasco          #+#    #+#             */
-/*   Updated: 2023/01/12 15:48:27 by cvelasco         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:09:18 by cvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_putchar(int c)
 {
-   	return (write (1, &c, 1));
+	return (write (1, &c, 1));
 }

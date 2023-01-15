@@ -23,7 +23,7 @@ int	ft_putstr(char *str)
 	{
 		if (ft_putchar(str[i]) == -1)
 			return (-1);
-		i++;	
+		i++;
 	}
 	return (i);
 }
